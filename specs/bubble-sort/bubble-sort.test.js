@@ -1,19 +1,23 @@
-// notes @sorts/bubble-sort
+// notes @iterative-sorts/bubble-sort
 
 function bubbleSort(nums) {
   let swapped;
   let n = nums.length;
+
   do {
     swapped = false;
+
     for (let i = 0; i < n; i++) {
       if (nums[i] > nums[i + 1]) {
+        // Swap elements
         const temp = nums[i];
         nums[i] = nums[i + 1];
         nums[i + 1] = temp;
+
         swapped = true;
       }
     }
-  } while (swapped);
+  } while (swapped); // Continue if a swap occurred
 }
 
 test("sorts an array of integers using bubble sort", function () {

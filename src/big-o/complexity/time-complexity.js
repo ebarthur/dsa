@@ -101,3 +101,6 @@ const odd = [1, 3, 5, 7, 9];
       --> shift/unshift/concat/slice/splice - O(n)
       --> forEach/map/filter/reduce - O(n)
   */
+
+// No matter how many items there are in a array, it takes a constant amount of time to go through it
+// Hence the time complexity is O(n)
