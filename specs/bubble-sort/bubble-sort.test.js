@@ -18,6 +18,7 @@ function bubbleSort(nums) {
       }
     }
   } while (swapped); // Continue if a swap occurred
+  return nums; // Return the sorted array
 }
 
 test("sorts an array of integers using bubble sort", function () {

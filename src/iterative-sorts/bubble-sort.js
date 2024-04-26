@@ -33,6 +33,7 @@ function bubbleSort(nums) {
     // Continue the loop if a swap occurred in the current iteration
   } while (swapped);
   // The array is now sorted in ascending order
+  return nums; // Return the sorted array
 }
 
 // Big-O - O(n^2)
