@@ -9,7 +9,7 @@
 // With merge sort, every case is the best case scenario,
 // the worst case scenario, and the average case scenario
 
-//No matter what you throw at merge sort, it will always be O(n log n)
+// No matter what you throw at merge sort, it will always be O(n log n)
 // Spacial complexity is O(n) because we are creating a new array and at least every element
 // eventually gets their own array
 
