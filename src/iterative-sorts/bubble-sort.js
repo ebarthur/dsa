@@ -50,7 +50,5 @@ function bubbleSort(nums) {
 
 // Is this algorithm destructive? Yes
 // Bubble sort is destructive because it modifies the original input array
-// test @specs/bubble-sort/bubble-sort.test
 
-// https://btholt.github.io/complete-intro-to-computer-science/bubble-sort/
-// https://visualgo.net/en/sorting
+// test @specs/bubble-sort/bubble-sort.test

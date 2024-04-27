@@ -1,4 +1,4 @@
-// notes @iterative-sorts/insertion-sort
+// notes @src/iterative-sorts/insertion-sort
 
 function insertionSort(nums) {
   for (let i = 1; i < nums.length; i++) {

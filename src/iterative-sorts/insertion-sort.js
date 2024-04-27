@@ -45,5 +45,4 @@ function insertionSort(nums) {
 // Is this algorithm stable? Yes
 // Is this algorithm destructive? Yes
 
-// https://btholt.github.io/complete-intro-to-computer-science/insertion-sort/
-// https://visualgo.net/en/sorting
+// test @specs/insertion-sort/insertion-sort.test

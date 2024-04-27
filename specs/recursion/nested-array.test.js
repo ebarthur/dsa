@@ -1,4 +1,4 @@
-// notes @recursive-sorts/nested-array
+// notes @src/recursion/nested-array
 
 // Function to calculate the sum of all numbers in a potentially nested array
 function nestedAdd(array) {

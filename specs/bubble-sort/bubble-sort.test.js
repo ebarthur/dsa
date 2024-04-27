@@ -1,4 +1,4 @@
-// notes @iterative-sorts/bubble-sort
+// notes @src/iterative-sorts/bubble-sort
 
 function bubbleSort(nums) {
   let swapped;

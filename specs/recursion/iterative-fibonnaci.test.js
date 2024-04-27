@@ -1,4 +1,4 @@
-// notes @recursive-sorts/recursion
+// notes @src/recursion/index
 
 // This is an algorithm for fibonnaci without recursive calls
 // This is efficient for computing large fibonnaci arguments

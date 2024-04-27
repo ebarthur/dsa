@@ -1,5 +1,3 @@
-// https://btholt.github.io/complete-intro-to-computer-science/big-o/
-
 // Space Complexity
 
 // O(1) Space Complexity

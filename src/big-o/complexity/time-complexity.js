@@ -1,5 +1,3 @@
-// https://btholt.github.io/complete-intro-to-computer-science/big-o/
-
 // Big - O Notation (worse case complexity)
 /*
 inSimpleTerms {

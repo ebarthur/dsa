@@ -1,4 +1,4 @@
-// notes @recursive-sorts/recursion
+// notes @src/recursion/index
 
 //Function to find the facorial of a number
 function factorial(n) {

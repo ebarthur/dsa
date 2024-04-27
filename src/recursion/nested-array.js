@@ -37,4 +37,4 @@ function nestedAdd(array) {
 // So, the time complexity is O(n)k where k is the number of nested arrays in the array
 // or simply the depth of the nested arrays.
 
-// test @nested-array/nested-array
+// test @specs/recursion/nested-array.test

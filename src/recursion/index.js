@@ -1,5 +1,3 @@
-// https://btholt.github.io/complete-intro-to-computer-science/recursion/
-
 // tests @specs/recursion
 
 // A recursive function is a function that calls itself
