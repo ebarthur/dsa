@@ -43,7 +43,7 @@ function quickSort(array) {
 /* The pivot would always be the largest number in the array, meaning the left array would always be full and the right array would always be empty. In order for us to get that log n magic instead of just n, we need to be able to skip some comparisons. If it's sorted, we will compare every number against every other so we'd end up with O(n²). Same would apply with a reverse-sorted list. */
 
 // The best case? A random array
-/* That way the pivots will tend to be more in the middle so we'll get a good mix in our left and right arrays which is where that log n magic comes in. In these cases, it'll be O(n log n) like merge sort. */
+// That way the pivots will tend to be more in the middle so we'll get a good mix in our left and right arrays which is where that log n magic comes in. In these cases, it'll be O(n log n) like merge sort. */
 
 // Spacial complexity is O(n) because we will be creating new
 // arrays for each recursive calls
@@ -52,3 +52,5 @@ function quickSort(array) {
 // technically it can go a little faster
 
 // The algorithm implemented above is a non-destructive version but we can also do it destructively which has a better spacial complexity
+
+// test @specs/quick-sort/quick-sort.test
