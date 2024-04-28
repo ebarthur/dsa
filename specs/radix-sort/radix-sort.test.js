@@ -1,12 +1,4 @@
-// In radix sort, we never directly compare elements in an array
-// We put them in what we call buckets based on their digits and sort them
-
-//We're going to sort the ones place first, so all the numbers in
-// the ones place are in order from 0 to 9 e.g. if we had the list
-//  of [109, 224, 901, 58] after the first was we would have
-// [901, 224, 58, 109]. Then we would sort on the tens place,
-//ending up with [901, 109, 224, 58]. Then we'd sort by the
-// hundreds, getting [58, 109, 224, 901]. And now we are sorted
+// notes @src/non-comparison-sorts/radix-sort
 
 // Function to get the digit at a specific place in a number
 function getDigit(number, place, longestNumber) {
@@ -70,9 +62,24 @@ function radixSort(array) {
   return array;
 }
 
-// Big O - O(n _ k)
-// --------
-/* In radix sort (and other ones too) we have multiple variables. n is still important but now we have another variable in play here (usually called k or w. Let's go with k for our purposes.) k is going to represents the "maximum key length". The more buckets we need, the larger the complexity. So instead of being O(n²) or O(n _ n), it ends up being O(n _ k). So is it better or worse than O(n log n) sorts? It depends! If you have a lot of numbers with lots of varied lengths that will bucket into a good distribution it can be very effective. If you numbers [1, 10, 100, 1000, 10000, 100000] etc it ends up being the worst sort. It ends up being O(n²) at that point.
- */
-
-// test @specs/radix-sort/radix-sort.test
+describe("radix sort", function () {
+  it("should sort correctly", () => {
+    const nums = [
+      20, 51, 3, 801, 415, 62, 4, 17, 19, 11, 1, 100, 1244, 104, 944, 854, 34,
+      3000, 3001, 1200, 633,
+    ];
+    const ans = radixSort(nums);
+    expect(ans).toEqual([
+      1, 3, 4, 11, 17, 19, 20, 34, 51, 62, 100, 104, 415, 633, 801, 854, 944,
+      1200, 1244, 3000, 3001,
+    ]);
+  });
+  it("should sort 99 random numbers correctly", () => {
+    const fill = 99;
+    const nums = new Array(fill)
+      .fill()
+      .map(() => Math.floor(Math.random() * 500000));
+    const ans = radixSort(nums);
+    expect(ans).toEqual(nums.sort());
+  });
+});
