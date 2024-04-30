@@ -23,13 +23,13 @@ function binarySearch(array, target) {
 
 // Recursive Binary Search
 function recursiveBinarySearch(array, target) {
-  return search(array, target, 0, arr.length - 1);
+  return search(array, target, 0, array.length - 1);
 }
 const search = (array, target, left, right) => {
   if (left > right) {
     return -1;
   }
-  let middle = Math.floor((left + left) / 2);
+  let middle = Math.floor((left + right) / 2);
   if (target === array[middle]) {
     return middle;
   }
