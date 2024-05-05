@@ -34,7 +34,7 @@ test("binary search", function () {
       { id: 10, name: "Simona" },
       { id: 12, name: "Asim" },
       { id: 13, name: "Niki" },
-      { id: 15, name: "Aysegul" },
+      { id: 15, name: "Michael" },
       { id: 17, name: "Kyle" },
       { id: 18, name: "Jem" },
       { id: 19, name: "Marc" },
