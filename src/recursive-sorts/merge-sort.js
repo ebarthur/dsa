@@ -1,7 +1,7 @@
 /*
   Write a function that performs mergesort
   Name the function mergeSort
-  It will take in a array of numbers and return a sorted array numbers
+  It will take in an array of numbers and return a sorted array numbers
 
   You'll need to write more than just one function
 */
@@ -57,7 +57,7 @@ const merge = (left, right) => {
     }
   }
 
-  // either left or right will be empty so you can safely concat both
+  // either left or right will be empty, so you can safely concat both
   return results.concat(left, right);
 };
 
