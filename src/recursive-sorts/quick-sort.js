@@ -1,6 +1,6 @@
-// Quick sort is better spacially because it uses less memory to do
+// Quick sort is better spatially because it uses less memory to do
 
-// It's another divide-and-conquer, recursive algorithm but it takes a slightly different approach.
+// It's another divide-and-conquer, recursive algorithm, but it takes a slightly different approach.
 // The basic gist is that you take the last element in the list and call that the pivot.
 // Everything that's smaller than the pivot gets put into a "left" list and everything that's greater
 // gets put in a "right" list. You then call quick sort on the left and right lists independently (hence the recursion.)
@@ -9,7 +9,7 @@
 
 // Quick sort algorithm
 function quickSort(array) {
-  // base case, array of length  or 1
+  // base case, array of length or 1
   if (array.length < 2) {
     return array;
   }
@@ -40,17 +40,17 @@ function quickSort(array) {
 // Big-O - O(n log n)
 
 // The worst case? An already sorted array
-/* The pivot would always be the largest number in the array, meaning the left array would always be full and the right array would always be empty. In order for us to get that log n magic instead of just n, we need to be able to skip some comparisons. If it's sorted, we will compare every number against every other so we'd end up with O(n²). Same would apply with a reverse-sorted list. */
+/* The pivot would always be the largest number in the array,meaning the left array would always be full and the right array would always be empty. In order for us to get that log n magic instead of just n, we need to be able to skip some comparisons. If it's sorted, we will compare every number against every other, so we'd end up with O(n²). Same would apply with a reverse-sorted list. */
 
 // The best case? A random array
-// That way the pivots will tend to be more in the middle so we'll get a good mix in our left and right arrays which is where that log n magic comes in. In these cases, it'll be O(n log n) like merge sort. */
+// That way the pivots will tend to be more in the middle, so we'll get a good mix in our left and right arrays which is where that log n magic comes in. In these cases, it'll be O(n log n) like merge sort. */
 
 // Spacial complexity is O(n) because we will be creating new
-// arrays for each recursive calls
+// arrays for each recursive call
 
-// This has a better space complexity than merge sort and
+// This has a better space complexity than merge sort, and
 // technically it can go a little faster
 
-// The algorithm implemented above is a non-destructive version but we can also do it destructively which has a better spacial complexity
+// The algorithm implemented above is a non-destructive version, but we can also do it destructively which has a better spacial complexity
 
 // test @specs/quick-sort/quick-sort.test

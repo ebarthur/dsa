@@ -2,13 +2,15 @@
 
 // A recursive function is a function that calls itself
 
-function countTo(max, current, list) {
+function countTo(max, current) {
   if (current > max) return;
   console.log(current);
   countTo(max, current + 1);
 }
 
-const counts = countTo(5, 1, []);
+const counts = countTo(5, 1);
+
+console.log(counts);
 
 // The base case is when we stop recurring. If we don't have a base case,
 // then our recursion will spiral out of control, and we will get a stack
@@ -26,7 +28,7 @@ function fibonnaci(n) {
   return fibonnaci(n - 2) + fibonnaci(n - 1);
 }
 
-console.log(fibonnaci(6));
+console.log(fibonnaci(8));
 
 // This is not efficient because what if we need to find fibonacci of a fairly large
 // number like 610. How many times will it add 1 to itself to get the answer. It makes this model
