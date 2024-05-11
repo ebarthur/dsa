@@ -50,7 +50,6 @@ function factorial(n) {
 // So basically each iteration multiplies the number by the previous number until it gets to 1
 // Big-O = O(n)
 
-
 // ArraySum is a function that takes an array of numbers and returns the sum of all the numbers in the array
 // The function uses recursion to calculate the sum of the numbers in the array
 

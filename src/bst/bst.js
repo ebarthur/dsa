@@ -70,3 +70,24 @@ class Node {
     return ans;
   }
 }
+
+const nums = [3, 7, 4, 6, 5, 1, 10, 2, 9, 8];
+const tree = new Tree();
+nums.map((num) => tree.add(num));
+const objs = tree.toObject();
+
+console.log(objs);
+
+// {
+//   value: 3,
+//     left: {
+//   value: 1,
+//     left: null,
+//     right: { value: 2, left: null, right: null }
+// },
+//   right: {
+//     value: 7,
+//       left: { value: 4, left: null, right: [Object] },
+//     right: { value: 10, left: [Object], right: null }
+//   }
+// }
