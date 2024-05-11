@@ -24,7 +24,7 @@ class LinkedList {
     }
     const penultimate = this._find(
       null,
-      (value, nodeValue, i, current) => current.next === this.tail
+      (value, nodeValue, i, current) => current.next === this.tail,
     );
     const ans = penultimate.next.value;
     penultimate.next = null;
@@ -56,6 +56,7 @@ class LinkedList {
         this.head = head.next;
       } else {
         this.head = null;
+        this.tail = null;
       }
       this.length--;
       return head.value;
