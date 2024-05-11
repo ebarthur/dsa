@@ -1,7 +1,7 @@
 // notes @src/recursive-sorts/quick-sort
 
 function quickSort(array) {
-  // base case, array of length  or 1
+  // base case, array of length or 1
   if (array.length < 2) {
     return array;
   }
