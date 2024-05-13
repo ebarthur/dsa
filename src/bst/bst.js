@@ -49,6 +49,71 @@ class Tree {
     }
     return this;
   }
+
+  search(value) {
+    let current = this.root;
+
+    while (current) {
+      if (current.value === value) {
+        return `${value} Found`;
+      } else if (current.value > value) {
+        current = current.left;
+      } else {
+        current = current.right;
+      }
+    }
+
+    return `${value} Not In Tree`;
+  }
+
+  delete(value) {
+    this.root = this.removeNode(this.root, value);
+  }
+
+  removeNode(node, key) {
+    if (node === null) {
+      // tree is empty
+      return null;
+    } else if (key < node.value) {
+      node.left = this.removeNode(node.left, key);
+      return node;
+    } else if (key > node.value) {
+      node.right = this.removeNode(node.right, key);
+      return node;
+    } else {
+      // node to be deleted is found
+      if (node.left === null && node.right === null) {
+        // node has no children
+        node = null;
+        return node;
+      }
+      if (node.left === null) {
+        // node has one child (right)
+        node = node.right;
+        return node;
+      } else if (node.right === null) {
+        // node has one child (left)
+        node = node.left;
+        return node;
+      }
+
+      // node has two children
+      let aux = this.findMinNode(node.right);
+      node.value = aux.value;
+
+      node.right = this.removeNode(node.right, aux.value);
+      return node;
+    }
+  }
+
+  findMinNode(node) {
+    if (node.left === null) {
+      return node;
+    } else {
+      return this.findMinNode(node.left);
+    }
+  }
+
   toJSON() {
     return JSON.stringify(this.root.serialize(), null, 4);
   }
