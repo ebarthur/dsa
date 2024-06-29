@@ -16,7 +16,7 @@ console.log(counts);
 // then our recursion will spiral out of control, and we will get a stack
 // overflow (hence the name of the helpful website) when we run out of memory.
 
-function fibonnaci(n) {
+function fibonacci(n) {
   // base case
   if (n === 1 || n === 2) {
     return 1;
@@ -25,14 +25,25 @@ function fibonnaci(n) {
   }
 
   // recursive calls
-  return fibonnaci(n - 2) + fibonnaci(n - 1);
+  return fibonacci(n - 1) + fibonacci(n - 2);
 }
 
-console.log(fibonnaci(8));
+console.log(fibonacci(8));
 
 // This is not efficient because what if we need to find fibonacci of a fairly large
 // number like 610. How many times will it add 1 to itself to get the answer. It makes this model
 // super inefficient.
+
+// Iterative fibonacci
+function iterativeFib(n) {
+  let arr = [0, 1];
+  for (let i = 2; i <= n; i++) {
+    arr.push(arr[i - 1] + arr[i - 2]);
+  }
+  return arr[n];
+}
+
+console.log(iterativeFib(4));
 
 // Recursive Factorial
 
@@ -45,7 +56,6 @@ function factorial(n) {
   // recursive call
   return n * factorial(n - 1);
 }
-
 // 5! = 5 * (4 * (3 * (2 * 1))) = 120
 // So basically each iteration multiplies the number by the previous number until it gets to 1
 // Big-O = O(n)
