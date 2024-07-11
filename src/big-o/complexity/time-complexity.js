@@ -14,11 +14,11 @@ it describes the complexity of an algo using algebraic terms
 //  --> Algorithm to find the sum of first n natural numbers
 
 function summation(n) {
-  let sum = 0; // statement 1
-  for (let i = 1; i <= n; i++) {
-    sum += i; // statement 2
-  }
-  return sum; // statement 3
+	let sum = 0; // statement 1
+	for (let i = 1; i <= n; i++) {
+		sum += i; // statement 2
+	}
+	return sum; // statement 3
 }
 
 // Example Usage
@@ -46,7 +46,7 @@ console.log(res);
 //  --> Another algorithm to find the sum of first n natural numbers
 
 function summation2(n) {
-  return (n * (n + 1)) / 2; // executed only once
+	return (n * (n + 1)) / 2; // executed only once
 }
 
 // Example usage
@@ -66,8 +66,8 @@ console.log(ans);
 // Big - O of Objects, Arrays and Methods
 
 const person = {
-  firstName: "Bruce",
-  lastName: "Wayne",
+	firstName: "Bruce",
+	lastName: "Wayne",
 };
 
 /*  

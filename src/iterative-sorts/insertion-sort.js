@@ -13,26 +13,26 @@
 
 // Define the insertionSort function that takes an array of numbers as an argument
 function insertionSort(nums) {
-  // Iterate over the array starting from the second element (index 1)
-  for (let i = 1; i < nums.length; i++) {
-    // Store the current element in the variable numberToInsert
-    let numberToInsert = nums[i];
+	// Iterate over the array starting from the second element (index 1)
+	for (let i = 1; i < nums.length; i++) {
+		// Store the current element in the variable numberToInsert
+		const numberToInsert = nums[i];
 
-    // Initialize j to be the index of the last sorted element
-    let j;
+		// Initialize j to be the index of the last sorted element
+		let j;
 
-    // Loop from the right to the left until we find the correct position to insert numberToInsert
-    // or we reach the beginning of the array
-    for (j = i - 1; nums[j] > numberToInsert && j >= 0; j--) {
-      // Shift the current sorted element to the right
-      nums[j + 1] = nums[j];
-    }
+		// Loop from the right to the left until we find the correct position to insert numberToInsert
+		// or we reach the beginning of the array
+		for (j = i - 1; nums[j] > numberToInsert && j >= 0; j--) {
+			// Shift the current sorted element to the right
+			nums[j + 1] = nums[j];
+		}
 
-    // Insert the number at the correct position in the sorted part of the array
-    nums[j + 1] = numberToInsert;
-  }
-  // Return the sorted array
-  return nums;
+		// Insert the number at the correct position in the sorted part of the array
+		nums[j + 1] = numberToInsert;
+	}
+	// Return the sorted array
+	return nums;
 }
 
 // Big-O - O(n^2)

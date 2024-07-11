@@ -3,11 +3,11 @@
 
 // Brute force: So we pair each number in the array to find which two nums add up to target
 function twoSum(nums, target) {
-  for (let i = 0; i < nums.length; i++) {
-    for (let j = i + 1; j < nums.length; j++) {
-      if (nums[i] + nums[j] === target) return [i, j];
-    }
-  }
+	for (let i = 0; i < nums.length; i++) {
+		for (let j = i + 1; j < nums.length; j++) {
+			if (nums[i] + nums[j] === target) return [i, j];
+		}
+	}
 }
 
 // Big-O => O(n^2)
@@ -18,17 +18,17 @@ console.log(twoSum([1, 2, 4, 5], 7));
 
 // Using Objects
 const two_sum = (nums, target) => {
-  let obj = {};
+	const obj = {};
 
-  for (let i = 0; i < nums.length; i++) {
-    let n = nums[i];
-    if (obj[target - n] >= 0) {
-      return [obj[target - n], i];
-    }
-    obj[n] = i;
-  }
+	for (let i = 0; i < nums.length; i++) {
+		const n = nums[i];
+		if (obj[target - n] >= 0) {
+			return [obj[target - n], i];
+		}
+		obj[n] = i;
+	}
 
-  return []; // if no pairs are matched
+	return []; // if no pairs are matched
 };
 console.log(two_sum([1, 2, 4, 5], 9));
 console.log(two_sum([1, 2, 4, 5], 6));

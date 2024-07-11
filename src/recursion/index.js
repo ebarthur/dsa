@@ -3,9 +3,9 @@
 // A recursive function is a function that calls itself
 
 function countTo(max, current) {
-  if (current > max) return;
-  console.log(current);
-  countTo(max, current + 1);
+	if (current > max) return;
+	console.log(current);
+	countTo(max, current + 1);
 }
 
 const counts = countTo(5, 1);
@@ -17,15 +17,16 @@ console.log(counts);
 // overflow (hence the name of the helpful website) when we run out of memory.
 
 function fibonacci(n) {
-  // base case
-  if (n === 1 || n === 2) {
-    return 1;
-  } else if (n < 1) {
-    return 0;
-  }
+	// base case
+	if (n === 1 || n === 2) {
+		return 1;
+	}
+	if (n < 1) {
+		return 0;
+	}
 
-  // recursive calls
-  return fibonacci(n - 1) + fibonacci(n - 2);
+	// recursive calls
+	return fibonacci(n - 1) + fibonacci(n - 2);
 }
 
 console.log(fibonacci(8));
@@ -36,11 +37,11 @@ console.log(fibonacci(8));
 
 // Iterative fibonacci
 function iterativeFib(n) {
-  let arr = [0, 1];
-  for (let i = 2; i <= n; i++) {
-    arr.push(arr[i - 1] + arr[i - 2]);
-  }
-  return arr[n];
+	const arr = [0, 1];
+	for (let i = 2; i <= n; i++) {
+		arr.push(arr[i - 1] + arr[i - 2]);
+	}
+	return arr[n];
 }
 
 console.log(iterativeFib(4));
@@ -48,13 +49,13 @@ console.log(iterativeFib(4));
 // Recursive Factorial
 
 function factorial(n) {
-  // base case
-  if (n < 2) {
-    return 1;
-  }
+	// base case
+	if (n < 2) {
+		return 1;
+	}
 
-  // recursive call
-  return n * factorial(n - 1);
+	// recursive call
+	return n * factorial(n - 1);
 }
 // 5! = 5 * (4 * (3 * (2 * 1))) = 120
 // So basically each iteration multiplies the number by the previous number until it gets to 1
@@ -64,13 +65,13 @@ function factorial(n) {
 // The function uses recursion to calculate the sum of the numbers in the array
 
 function arraySum(array) {
-  // base case
-  if (array.length === 0) {
-    return 0;
-  }
+	// base case
+	if (array.length === 0) {
+		return 0;
+	}
 
-  // recursive call
-  return array[0] + arraySum(array.slice(1));
+	// recursive call
+	return array[0] + arraySum(array.slice(1));
 }
 
 // Big-O = O(n) because it will iterate through all the elements in the array

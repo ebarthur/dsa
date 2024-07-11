@@ -6,10 +6,10 @@
 
 // Approach 1
 function validAnagram(s, t) {
-  const sx = s.split("").sort().join("");
-  const tx = t.split("").sort().join("");
+	const sx = s.split("").sort().join("");
+	const tx = t.split("").sort().join("");
 
-  return sx === tx;
+	return sx === tx;
 }
 
 // sad => ["s","a","d"] => ["a","d","s"] => ads
@@ -17,22 +17,22 @@ function validAnagram(s, t) {
 console.log(validAnagram("sad", "ads")); //true
 
 // Approach 2: Objects
-const isAnagram = function (s, t) {
-  if (s.length !== t.length) return false;
+const isAnagram = (s, t) => {
+	if (s.length !== t.length) return false;
 
-  let obj1 = {};
-  let obj2 = {};
+	const obj1 = {};
+	const obj2 = {};
 
-  for (let i = 0; i < s.length; i++) {
-    obj1[s[i]] = (obj1[s[i]] || 0) + 1;
-    obj2[t[i]] = (obj2[t[i]] || 0) + 1;
-  }
+	for (let i = 0; i < s.length; i++) {
+		obj1[s[i]] = (obj1[s[i]] || 0) + 1;
+		obj2[t[i]] = (obj2[t[i]] || 0) + 1;
+	}
 
-  for (const key in obj1) {
-    if (obj1[key] !== obj2[key]) return false;
-  }
+	for (const key in obj1) {
+		if (obj1[key] !== obj2[key]) return false;
+	}
 
-  return true;
+	return true;
 };
 
 console.log(isAnagram("sad", "ads")); //true

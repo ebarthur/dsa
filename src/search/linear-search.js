@@ -2,11 +2,11 @@
 // within an array.
 
 function linearSearch(array, target) {
-  for (let i = 0; i < array.length; i++) {
-    if (array[i] === target) {
-      return i;
-    }
-  }
-  return -1;
+	for (let i = 0; i < array.length; i++) {
+		if (array[i] === target) {
+			return i;
+		}
+	}
+	return -1;
 }
 //Big-O - O(n)

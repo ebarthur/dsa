@@ -9,32 +9,32 @@
 
 // Quick sort algorithm
 function quickSort(array) {
-  // base case, array of length or 1
-  if (array.length < 2) {
-    return array;
-  }
-  // choose the last element as the pivot
-  const pivot = array[array.length - 1];
+	// base case, array of length or 1
+	if (array.length < 2) {
+		return array;
+	}
+	// choose the last element as the pivot
+	const pivot = array[array.length - 1];
 
-  // create left and right arrays
-  const left = [];
-  const right = [];
+	// create left and right arrays
+	const left = [];
+	const right = [];
 
-  //loop over the array and compare each element to the pivot
-  for (let i = 0; i < array.length - 1; i++) {
-    if (array[i] < pivot) {
-      left.push(array[i]);
-    } else {
-      right.push(array[i]);
-    }
-  }
+	//loop over the array and compare each element to the pivot
+	for (let i = 0; i < array.length - 1; i++) {
+		if (array[i] < pivot) {
+			left.push(array[i]);
+		} else {
+			right.push(array[i]);
+		}
+	}
 
-  // call quickSort on left and right arrays
-  const sortedLeft = quickSort(left);
-  const sortedRight = quickSort(right);
+	// call quickSort on left and right arrays
+	const sortedLeft = quickSort(left);
+	const sortedRight = quickSort(right);
 
-  // return left, pivot, and right arrays concatenated
-  return [...sortedLeft, pivot, ...sortedRight];
+	// return left, pivot, and right arrays concatenated
+	return [...sortedLeft, pivot, ...sortedRight];
 }
 
 // Big-O - O(n log n)

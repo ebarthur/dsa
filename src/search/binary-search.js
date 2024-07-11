@@ -3,41 +3,40 @@
 
 // Iterative Binary Search
 function binarySearch(array, target) {
-  let left = 0;
-  let right = array.length - 1;
+	let left = 0;
+	let right = array.length - 1;
 
-  while (left <= right) {
-    let middle = Math.floor((left + right) / 2);
+	while (left <= right) {
+		const middle = Math.floor((left + right) / 2);
 
-    if (target === array[middle]) {
-      return middle;
-    }
-    if (target < array[middle]) {
-      right = middle - 1;
-    } else {
-      left = middle + 1;
-    }
-  }
-  return -1;
+		if (target === array[middle]) {
+			return middle;
+		}
+		if (target < array[middle]) {
+			right = middle - 1;
+		} else {
+			left = middle + 1;
+		}
+	}
+	return -1;
 }
 
 // Recursive Binary Search
 function recursiveBinarySearch(array, target) {
-  return search(array, target, 0, array.length - 1);
+	return search(array, target, 0, array.length - 1);
 }
 const search = (array, target, left, right) => {
-  if (left > right) {
-    return -1;
-  }
-  let middle = Math.floor((left + right) / 2);
-  if (target === array[middle]) {
-    return middle;
-  }
-  if (target < array[middle]) {
-    return search(array, target, left, middle - 1);
-  } else {
-    return search(array, target, middle + 1, right);
-  }
+	if (left > right) {
+		return -1;
+	}
+	const middle = Math.floor((left + right) / 2);
+	if (target === array[middle]) {
+		return middle;
+	}
+	if (target < array[middle]) {
+		return search(array, target, left, middle - 1);
+	}
+	return search(array, target, middle + 1, right);
 };
 
 // Big-O - O(log n)

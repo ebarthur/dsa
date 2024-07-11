@@ -18,122 +18,124 @@ right - Node/object - the right node which itself may be another tree
 */
 
 class Tree {
-  constructor() {
-    this.root = null;
-  }
-  add(value) {
-    if (this.root === null) {
-      this.root = new Node(value);
-    } else {
-      let current = this.root;
-      while (true) {
-        if (current.value > value) {
-          // go left
+	constructor() {
+		this.root = null;
+	}
+	add(value) {
+		if (this.root === null) {
+			this.root = new Node(value);
+		} else {
+			let current = this.root;
+			while (true) {
+				if (current.value > value) {
+					// go left
 
-          if (current.left) {
-            current = current.left;
-          } else {
-            current.left = new Node(value);
-            break;
-          }
-        } else {
-          // go right
-          if (current.right) {
-            current = current.right;
-          } else {
-            current.right = new Node(value);
-            break;
-          }
-        }
-      }
-    }
-    return this;
-  }
+					if (current.left) {
+						current = current.left;
+					} else {
+						current.left = new Node(value);
+						break;
+					}
+				} else {
+					// go right
+					if (current.right) {
+						current = current.right;
+					} else {
+						current.right = new Node(value);
+						break;
+					}
+				}
+			}
+		}
+		return this;
+	}
 
-  search(value) {
-    let current = this.root;
+	search(value) {
+		let current = this.root;
 
-    while (current) {
-      if (current.value === value) {
-        return `${value} Found`;
-      } else if (current.value > value) {
-        current = current.left;
-      } else {
-        current = current.right;
-      }
-    }
+		while (current) {
+			if (current.value === value) {
+				return `${value} Found`;
+			}
+			if (current.value > value) {
+				current = current.left;
+			} else {
+				current = current.right;
+			}
+		}
 
-    return `${value} Not In Tree`;
-  }
+		return `${value} Not In Tree`;
+	}
 
-  delete(value) {
-    this.root = this.removeNode(this.root, value);
-  }
+	delete(value) {
+		this.root = this.removeNode(this.root, value);
+	}
 
-  removeNode(node, key) {
-    if (node === null) {
-      // tree is empty
-      return null;
-    } else if (key < node.value) {
-      node.left = this.removeNode(node.left, key);
-      return node;
-    } else if (key > node.value) {
-      node.right = this.removeNode(node.right, key);
-      return node;
-    } else {
-      // node to be deleted is found
-      if (node.left === null && node.right === null) {
-        // node has no children
-        node = null;
-        return node;
-      }
-      if (node.left === null) {
-        // node has one child (right)
-        node = node.right;
-        return node;
-      } else if (node.right === null) {
-        // node has one child (left)
-        node = node.left;
-        return node;
-      }
+	removeNode(node, key) {
+		if (node === null) {
+			// tree is empty
+			return null;
+		}
+		if (key < node.value) {
+			node.left = this.removeNode(node.left, key);
+			return node;
+		}
+		if (key > node.value) {
+			node.right = this.removeNode(node.right, key);
+			return node;
+		}
+		// node to be deleted is found
+		if (node.left === null && node.right === null) {
+			// node has no children
+			node = null;
+			return node;
+		}
+		if (node.left === null) {
+			// node has one child (right)
+			node = node.right;
+			return node;
+		}
+		if (node.right === null) {
+			// node has one child (left)
+			node = node.left;
+			return node;
+		}
 
-      // node has two children
-      let aux = this.findMinNode(node.right);
-      node.value = aux.value;
+		// node has two children
+		const aux = this.findMinNode(node.right);
+		node.value = aux.value;
 
-      node.right = this.removeNode(node.right, aux.value);
-      return node;
-    }
-  }
+		node.right = this.removeNode(node.right, aux.value);
+		return node;
+	}
 
-  findMinNode(node) {
-    if (node.left === null) {
-      return node;
-    } else {
-      return this.findMinNode(node.left);
-    }
-  }
+	findMinNode(node) {
+		if (node.left === null) {
+			return node;
+		}
+		return this.findMinNode(node.left);
+	}
 
-  toJSON() {
-    return JSON.stringify(this.root.serialize(), null, 4);
-  }
-  toObject() {
-    return this.root.serialize();
-  }
+	toJSON() {
+		return JSON.stringify(this.root.serialize(), null, 4);
+	}
+	toObject() {
+		return this.root.serialize();
+	}
 }
 
 class Node {
-  constructor(value = null, left = null, right = null) {
-    this.left = left;
-    this.right = right;
-    this.value = value;
-  }
-  serialize() {
-    const ans = { value: this.value };
-    ans.left = this.left === null ? null : this.left.serialize();
-    ans.right = this.right === null ? null : this.right.serialize();
-    return ans;
-  }
+	constructor(value = null, left = null, right = null) {
+		this.left = left;
+		this.right = right;
+		this.value = value;
+	}
+	serialize() {
+		const ans = { value: this.value };
+		ans.left = this.left === null ? null : this.left.serialize();
+		ans.right = this.right === null ? null : this.right.serialize();
+		return ans;
+	}
 }
 
 const nums = [3, 7, 4, 6, 5, 1, 10, 2, 9, 8];
