@@ -12,7 +12,6 @@ function getDigit(number, place, longestNumber) {
 	// Return the digit at the specific place in the number, or 0 if the place is not within the length of the number
 	return string[place - mod] || 0;
 }
-console.log(getDigit(12345, 5, 5));
 // Function to find the longest number in an array
 function findLongestNumber(array) {
 	// Initialize the longest length to 0

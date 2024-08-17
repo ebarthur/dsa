@@ -10,3 +10,6 @@ function linearSearch(array, target) {
 	return -1;
 }
 //Big-O - O(n)
+
+const test = [22, 4, 6, 21, 76, 43, 2];
+console.log(linearSearch(test, 76));
