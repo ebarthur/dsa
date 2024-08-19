@@ -68,11 +68,25 @@ class LinkedList {
 	}
 
 	getFirst() {
-		return this.head.value;
+		return this.head;
 	}
 
 	getLast() {
-		return this.tail.value;
+		if (!this.head) {
+			return null;
+		}
+
+		let temp = this.head;
+
+		while (temp) {
+			if (!temp.next) {
+				return temp;
+			}
+
+			temp = temp.next;
+		}
+
+		return temp.value;
 	}
 
 	get(index) {
@@ -87,6 +101,81 @@ class LinkedList {
 
 		return current;
 	}
+
+	// let counter = 0;
+	// let temp = this.head;
+
+	// while (temp) {
+	// 	if (counter === index) {
+	// 		return temp;
+	// 	}
+	// 	counter++;
+	// 	temp = temp.next;
+	// }
+	// 	return null
+	// }
+
+	set(index, value) {
+		// did this from scratch but you can use the this.get method to quickly grab the node you want to update
+		if (index < 0 || index > this.length) {
+			return null;
+		}
+
+		let temp = this.head;
+
+		for (let i = 0; i < index; i++) {
+			temp = temp.next;
+		}
+		temp.value = value;
+		return temp;
+	}
+
+	// for insert, i can use unshift and push to handle edge cases
+	// then use get by index method to get the temp value and swap pointers
+	// but this way is more generic and standalone and does not require helper methods
+	insert(index, value) {
+		if (index < 0 || index > this.length) {
+			return null;
+		}
+
+		const newNode = new Node(value);
+
+		if (index === 0) {
+			newNode.next = this.head;
+			this.head = newNode;
+		} else {
+			let current = this.head;
+			let previous;
+
+			for (let i = 0; i < index; i++) {
+				previous = current;
+				current = current.next;
+			}
+
+			newNode.next = current;
+			previous.next = newNode;
+		}
+
+		this.length++;
+		return newNode;
+	}
+
+	size() {
+		let temp = this.head;
+		let counter = 0;
+
+		while (temp) {
+			if (!temp.next) {
+				return counter;
+			}
+			counter++;
+			temp = temp.next;
+		}
+	}
+
+	clear() {
+		this.head = null;
+	}
 }
 
 const myLinkedList = new LinkedList(1);
@@ -97,5 +186,13 @@ console.log(myLinkedList.pop());
 console.log(myLinkedList.unshift(10));
 console.log(myLinkedList.shift());
 console.log(myLinkedList.get(2));
-console.log(`First item: ${myLinkedList.getFirst()}`);
-console.log(`Last item: ${myLinkedList.getLast()}`);
+console.log(myLinkedList.getFirst());
+console.log(myLinkedList.getLast());
+console.log(myLinkedList.set(1, 15));
+console.log(myLinkedList.get(1));
+console.log(myLinkedList.insert(0, 8));
+console.log(myLinkedList.insert(3, 12));
+console.log(myLinkedList.size());
+console.log(myLinkedList.clear());
+console.log(myLinkedList.size());
+console.log(myLinkedList.getLast());
