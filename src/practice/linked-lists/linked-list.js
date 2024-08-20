@@ -78,15 +78,11 @@ class LinkedList {
 
 		let temp = this.head;
 
-		while (temp) {
-			if (!temp.next) {
-				return temp;
-			}
-
+		while (temp.next) {
 			temp = temp.next;
 		}
 
-		return temp.value;
+		return temp;
 	}
 
 	get(index) {
@@ -116,7 +112,7 @@ class LinkedList {
 	// }
 
 	set(index, value) {
-		// did this from scratch but you can use the this.get method to quickly grab the node you want to update
+		// did this from scratch but you can use the this.get(index) method to quickly grab the node you want to update
 		if (index < 0 || index > this.length) {
 			return null;
 		}
