@@ -53,5 +53,6 @@ const theQueue = new Queue(2);
 console.log(theQueue.enqueue(6));
 console.log(theQueue.enqueue(10));
 console.log(theQueue.enqueue(17));
+console.log(theQueue.enqueue(0));
 console.log(theQueue.dequeue());
 console.log(theQueue.dequeue());

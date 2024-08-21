@@ -26,13 +26,12 @@ class Stack {
 
 	pop() {
 		if (this.isEmpty()) {
-			return "Cannot pop an empty stack";
+			return null;
 		}
-		let temp = this.top;
+		const poppedValue = this.top.value;
 		this.top = this.top.next;
-		temp = null;
 		this.length--;
-		return temp;
+		return poppedValue;
 	}
 }
 
