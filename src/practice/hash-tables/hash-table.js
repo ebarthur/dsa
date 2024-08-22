@@ -26,6 +26,30 @@ class HashTable {
 		return undefined;
 	}
 
+	getAllKeys() {
+		const keys = [];
+		for (let i = 0; i < this.keyMap.length; i++) {
+			if (this.keyMap[i]) {
+				for (let j = 0; j < this.keyMap[i].length; j++) {
+					keys.push(this.keyMap[i][j][0]);
+				}
+			}
+		}
+		return keys;
+	}
+
+	getAllValues() {
+		const values = [];
+		for (let i = 0; i < this.keyMap.length; i++) {
+			if (this.keyMap[i]) {
+				for (let j = 0; j < this.keyMap[i].length; j++) {
+					values.push(this.keyMap[i][j][1]);
+				}
+			}
+		}
+		return values;
+	}
+
 	#hashFunction(key) {
 		const PRIME_NUMBER = 31;
 		let sum = 0;
@@ -42,4 +66,8 @@ class HashTable {
 // Example usage
 const hashTable = new HashTable();
 console.log(hashTable.set("secret", "no-mo"));
+console.log(hashTable.set("hello", "world"));
+console.log(hashTable.set("greg", "anthony"));
 console.log(hashTable.get("secret"));
+console.log(hashTable.getAllKeys());
+console.log(hashTable.getAllValues());
