@@ -95,5 +95,4 @@ console.log(myTree.search(4));
 console.log(myTree.includes(1));
 console.log(myTree.includes(3));
 console.log(myTree.includes(10));
-console.log(myTree.bfs());
 console.log(myTree);
