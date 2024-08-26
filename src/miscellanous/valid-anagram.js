@@ -36,4 +36,4 @@ const isAnagram = (s, t) => {
 };
 
 console.log(isAnagram("sad", "ads")); //true
-console.log(isAnagram("sad", "mum")); //true
+console.log(isAnagram("anagram", "nagaram")); //true

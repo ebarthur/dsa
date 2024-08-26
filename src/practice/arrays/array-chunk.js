@@ -57,3 +57,14 @@ function chunk(array, size) {
 }
 
 console.log(chunk([1, 2, 3, 4, 5, 6, 7, 8], 3));
+
+function _chunk(arr, size) {
+	const chunked = [];
+	for (let i = 0; i < arr.length; i += size) {
+		const chunks = arr.slice(i, i + size);
+		chunked.push(chunks);
+	}
+	return chunked;
+}
+
+console.log(_chunk([1, 2, 3, 4, 5, 6, 7, 8], 3));
